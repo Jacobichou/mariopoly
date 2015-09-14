@@ -11,13 +11,25 @@ public class Game {
 	public static boolean DEBUG_MODE = false; 
 	
 	private static int playerCount; 
+	private static int roundNumber = 1;
 	
-	private static int roundNumber = 1; 
+	private static Player winner;
 	
 	static Game game; 
 	
 	public Game(){ 
 		initGame(); 
+	}
+	
+	/**
+	 * Exposed method to start the game
+	 */
+	public Game start()
+	{
+//		initGame();
+		main(null);
+		
+		return this;
 	}
 	
 	public static void initGame() 
@@ -58,6 +70,7 @@ public class Game {
 		for (int i = 0; i < board.getPlayers().size(); i++){
 			nextTurn(i); 
 			if (board.getPlayers().size() == 1) {
+				winner = board.getPlayers().get(0);
 				System.out.println(board.getPlayers().get(0).getName() + " is the last person standing.");
 				System.out.println(board.getPlayers().get(0).getName() + " has won the game!!"); 
 				return true;
@@ -198,4 +211,12 @@ public class Game {
 	public Board getBoard() { return board; }
 	public static Bank getBank() { return bank; }
 	public static boolean getDebugMode() { return DEBUG_MODE; }
+
+	public Player getWinner() {
+		return winner;
+	}
+
+	public void setWinner(Player winner) {
+		this.winner = winner;
+	}
 }

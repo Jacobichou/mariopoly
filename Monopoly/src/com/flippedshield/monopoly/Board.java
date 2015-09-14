@@ -15,9 +15,9 @@ public class Board {
 //	private static Board instance; 
 	
 
-	private final String CARD_INFORMATION_JSON = "cardInformation.json"; 
-	private final String TOKENS_JSON = "tokens.json";
-	private final String PLAYERS_JSON = "players.json";
+	private final String CARD_INFORMATION_JSON = Board.class.getResource("/com/ninetindough/data/cardInformation.json").getFile(); 
+	private final String TOKENS_JSON = Board.class.getResource("/com/ninetindough/data/tokens.json").getFile();
+	private final String PLAYERS_JSON = Board.class.getResource("/com/ninetindough/data/players.json").getFile();
 	public static int JAIL_INDEX; 
 	
 	private BankerPlayer banker;
@@ -60,6 +60,7 @@ public class Board {
 		players = new ArrayList<Player>(); 
 		JSONParser parser = new JSONParser(); 
 		try {
+			
 			Object obj = parser.parse(new FileReader(PLAYERS_JSON)); 
 			JSONObject jsonObj = (JSONObject) obj; 
 			JSONArray jsonPlayers = (JSONArray) jsonObj.get("players"); 

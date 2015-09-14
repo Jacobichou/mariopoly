@@ -13,7 +13,7 @@ import org.json.simple.parser.ParseException;
 public class Bank {
 	private Bank instance; 
 	
-	static final String DEED_JSON = "deeds.json";
+	static final String DEED_JSON = Bank.class.getResource("/com/ninetindough/data/deeds.json").getFile();
 	
 	private static ArrayList<Deed> deeds; 
 	

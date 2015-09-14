@@ -9,7 +9,9 @@
 </head>
 <body>
 	<img src="images/board.jpg" alt="board" />
-	<p>Number of Players: </p> <%= request.getParameter("playerCount") %>
+	<p>Number of Players: </p> <%= request.getAttribute("playerCount") %>
+	<p>Spaces: </p> <%= request.getAttribute("spaces") %>
+	<p>WINNER: </p> <%= request.getAttribute("winner") %>
 	
 	<img id="baby" src="images/baby.gif" alt="Baby Yoshi" />
 	<img id="coin" src="images/coin.gif" alt="Coin" />
