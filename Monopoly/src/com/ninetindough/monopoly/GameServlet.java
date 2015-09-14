@@ -17,6 +17,7 @@ public class GameServlet extends HttpServlet {
     /**
      * Default constructor. 
      */
+	String numOfPlayers;
     public GameServlet() {
         // TODO Auto-generated constructor stub
     }
@@ -26,6 +27,8 @@ public class GameServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		numOfPlayers = request.getParameter("playerCount");
+		request.setAttribute("numOfPlayers", numOfPlayers);
 		response.getWriter().append("Served at: ").append(request.getContextPath());
 	}
 
@@ -34,7 +37,14 @@ public class GameServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		
 		doGet(request, response);
+		
+		
+	}
+	
+	public String getNumOfPlayers(){
+		return numOfPlayers;
 	}
 
 }

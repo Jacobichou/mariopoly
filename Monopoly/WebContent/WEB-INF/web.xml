@@ -13,10 +13,13 @@
   <servlet>
   <servlet-name>GameServlet</servlet-name>
   <servlet-class>com.ninetindough.monopoly.GameServlet</servlet-class>
+  <jsp-file>/PlayGame.jsp</jsp-file>
   </servlet>
   
   <servlet-mapping>
   <servlet-name>GameServlet</servlet-name>
   <url-pattern>/play</url-pattern>
   </servlet-mapping>
+  
+  
 </web-app>
