@@ -11,10 +11,50 @@
 	<img src="images/board.jpg" alt="board" />
 	<p>Number of Players: </p> <%= request.getAttribute("playerCount") %>
 	<p>Spaces: </p> <%= request.getAttribute("spaces") %>
-	<p>WINNER: </p> <%= request.getAttribute("winner") %>
+	${game}
+	<br>
+	<p id="test"></p>
+	<input id="player" type="text" name="player" value="3">
+	<button onClick="sendInfo()" type="button">Boop</button>
 	
 	<img id="baby" src="images/baby.gif" alt="Baby Yoshi" />
 	<img id="coin" src="images/coin.gif" alt="Coin" />
 	<img id="dragonCoin" src="images/dragonCoin.png" alt="Dragon Coin" />
+	
+	
+	<script>  
+	var request;  
+	function sendInfo()  
+	{  
+		var v = document.getElementById("player").value;
+		var url="/Monopoly/play?player=" + v;  
+		  
+		if(window.XMLHttpRequest){  
+		request=new XMLHttpRequest();  
+	}  
+	else if(window.ActiveXObject){  
+		request=new ActiveXObject("Microsoft.XMLHTTP");  
+	}  
+	  
+	try{  
+		request.onreadystatechange=getInfo;  
+		request.open("GET",url,true);  
+		request.send();  
+		}catch(e){alert("Unable to connect to server");}  
+	}  
+	  
+	function getInfo(){  
+		if(request.readyState==4){  
+			var val=request.responseText;  
+			document.getElementById('test').innerHTML=val;  
+		}  
+	}  
+  
+</script> 
+
+<script type="text/javascript">
+  setInterval(sendInfo,5000)
+</script>
+
 </body>
 </html>

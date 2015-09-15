@@ -11,15 +11,13 @@
   </welcome-file-list>
   
   <servlet>
-  <servlet-name>GameServlet</servlet-name>
-  <servlet-class>com.ninetindough.monopoly.GameServlet</servlet-class>
-  
+  	<servlet-name>GameServlet</servlet-name>
+  	<servlet-class>com.ninetindough.monopoly.GameServlet</servlet-class>
   </servlet>
   
   <servlet-mapping>
-  <servlet-name>GameServlet</servlet-name>
-  <url-pattern>/play</url-pattern>
+  	<servlet-name>GameServlet</servlet-name>
+  	<url-pattern>/play</url-pattern>
   </servlet-mapping>
-  
   
 </web-app>

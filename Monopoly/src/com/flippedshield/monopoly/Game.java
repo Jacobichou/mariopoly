@@ -24,7 +24,7 @@ public class Game {
 	/**
 	 * Exposed method to start the game
 	 */
-	public Game start()
+	public Game run()
 	{
 //		initGame();
 		main(null);

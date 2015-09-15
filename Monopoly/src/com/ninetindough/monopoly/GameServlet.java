@@ -19,12 +19,13 @@ public class GameServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	
 	private String playerCount;
+	private Game g;
 
     /**
      * Default constructor. 
      */
     public GameServlet() {
-    	
+    	g = new Game().run();
     }
 
 	/**
@@ -34,16 +35,18 @@ public class GameServlet extends HttpServlet {
 		playerCount = request.getParameter("playerCount");
 		request.setAttribute("playerCount", playerCount);
 		
-//		Game.main(null);
-		
-		Game g = new Game().start();
-		
+//		g = new Game().run();
+//		
 		request.setAttribute("spaces", g.getBoard().getSpaces().get(1).getName());
-		request.setAttribute("winner", "wat");//g.getWinner().getName());
+//		request.setAttribute("game", g);
 		
-		RequestDispatcher rd = request.getRequestDispatcher("PlayGame.jsp");
-		rd.forward(request, response);
+//		RequestDispatcher rd = request.getRequestDispatcher("PlayGame.jsp");
+//		rd.forward(request, response);
 		
+		response.setContentType("text/plain");
+		response.setCharacterEncoding("UTF-8");
+		
+		response.getWriter().write(g.getBoard().getSpaces().get(Integer.parseInt(request.getParameter("player"))).getName());
 //		response.getWriter().append("Served at: ").append(request.getContextPath());
 	}
 
