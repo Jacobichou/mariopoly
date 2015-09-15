@@ -10,6 +10,8 @@ import com.ninetindough.monopoly.GameServlet;
 
 public class Game {
 	
+	private static Game instance = null;
+	
 	private static Board board;
 	private static Bank bank;
 	private static boolean gameWon = false; 
@@ -29,6 +31,16 @@ public class Game {
 	
 	public Game(){ 
 		initGame(); 
+	}
+	
+	public static Game getInstance()
+	{
+		if(instance == null)
+		{
+			instance = new Game();
+		}
+		
+		return instance;
 	}
 	
 	/**
@@ -59,7 +71,7 @@ public class Game {
 	private static void mainGameLoop() throws InterruptedException {
 		System.out.println("Welcome to The Money Game!\n  ---   ");	
 		game = new Game(); 
-		playerCount = board.getPlayers().size(); 
+//		playerCount = board.getPlayers().size(); 
 		setTurnOrder();
 //		while(!gameWon){
 //			//refresh jsp 

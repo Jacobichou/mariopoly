@@ -21,6 +21,7 @@ public class GameServlet extends HttpServlet {
 	
 	private String playerCount;
 	private Game g;
+	private static Round round;
 	private static HttpServletRequest request;
 	private static HttpServletResponse response;
 
@@ -28,6 +29,7 @@ public class GameServlet extends HttpServlet {
      * Default constructor. 
      */
     public GameServlet() {
+    	System.out.println("MORE THAN ONCE????");
     }
 
 	/**
@@ -53,14 +55,14 @@ public class GameServlet extends HttpServlet {
 			RequestDispatcher rd = request.getRequestDispatcher("PlayGame.jsp");
 			rd.forward(request, response);
 			g = new Game().run(playerCount);
+		} else
+		{
+			response.setContentType("text/plain");
+			response.setCharacterEncoding("UTF-8");
+			CharSequence s = String.valueOf(round.getRoundNumber());
+			response.getWriter().append(s);
 		}
-		
-//		response.setContentType("text/plain");
-//		response.setCharacterEncoding("UTF-8");
-		
-//		response.getWriter().write(g.getBoard().getSpaces().get(Integer.parseInt(request.getParameter("playerCount"))).getName());
-//		response.getWriter().write(g.getWinner().getName());
-//		response.getWriter().append("Served at: ").append(request.getContextPath());
+
 	}
 	
 	/**
@@ -70,11 +72,12 @@ public class GameServlet extends HttpServlet {
 		doGet(request, response);
 	}
 	
-	public static void refresh(Round round) throws ServletException, IOException
+	public static void refresh(Round r) throws ServletException, IOException
 	{
-		RequestDispatcher rd = request.getRequestDispatcher("PlayGame.jsp");
-		response.getWriter().append("BANNANANANS\n\r");
-		rd.forward(request, response);
+		round = r;
+//		response.getWriter().append("BANNANANANS\n\r");
+//		RequestDispatcher rd = request.getRequestDispatcher("PlayGame.jsp");
+//		rd.forward(request, response);
 	}
 
 }
