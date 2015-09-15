@@ -47,6 +47,11 @@ public class GameServlet extends HttpServlet {
 			playerCount = request.getParameter("playerCount");
 		}
 		
+		if(request.getParameter("newGame") != null && request.getParameter("newGame").equals("1")){
+			g = null;
+//			round = null;
+		}
+		
 		//start game only if not started already
 		if(g == null)
 		{
@@ -62,8 +67,12 @@ public class GameServlet extends HttpServlet {
 		{
 			response.setContentType("text/plain");
 			response.setCharacterEncoding("UTF-8");
-			CharSequence s = String.valueOf(round.getRoundNumber());
-			response.getWriter().append("Round: " + s + "<br />");
+//			if(round!=null){
+				CharSequence s = String.valueOf(round.getRoundNumber());
+				response.getWriter().append("Round: " + s + "<br />");
+//			}
+			
+			
 			for(int i = 0; i < players.length; i++){
 				response.getWriter().append("Player 1: " + players[i] + "<br />");
 				response.getWriter().append("Money: $" + String.valueOf(round.getPlayers().get(i).getWealth()) + "<br />");
