@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.flippedshield.monopoly.Game;
+import com.flippedshield.monopoly.Player;
 import com.flippedshield.monopoly.Round;
 
 /**
@@ -22,6 +23,7 @@ public class GameServlet extends HttpServlet {
 	private String playerCount;
 	private Game g;
 	private static Round round;
+	private String[] players;
 	private static HttpServletRequest request;
 	private static HttpServletResponse response;
 
@@ -55,12 +57,23 @@ public class GameServlet extends HttpServlet {
 			RequestDispatcher rd = request.getRequestDispatcher("PlayGame.jsp");
 			rd.forward(request, response);
 			g = new Game().run(playerCount);
+			players = new String[round.getPlayers().size()];
+			for(Player p : round.getPlayers())
+			{
+				players[round.getPlayers().indexOf(p)] = p.getName();
+			}
 		} else
 		{
 			response.setContentType("text/plain");
 			response.setCharacterEncoding("UTF-8");
 			CharSequence s = String.valueOf(round.getRoundNumber());
-			response.getWriter().append(s);
+			response.getWriter().append("Round: " + s + "<br />");
+			for(int i = 0; i < players.length; i++){
+				response.getWriter().append("Player 1: " + players[i] + "<br />");
+				response.getWriter().append("Money: $" + String.valueOf(round.getPlayers().get(i).getWealth()) + "<br />");
+			}
+			 //round.getPlayers().get(0).getName()
+			
 			try {
 				Game.stepRound();
 			} catch (InterruptedException e) {
