@@ -31,7 +31,6 @@ public class GameServlet extends HttpServlet {
      * Default constructor. 
      */
     public GameServlet() {
-    	System.out.println("MORE THAN ONCE????");
     }
 
 	/**
@@ -47,9 +46,6 @@ public class GameServlet extends HttpServlet {
 		{
 			playerCount = request.getParameter("playerCount");
 		}
-		
-		System.out.println("PLAYER " + playerCount);
-		System.out.println("GAME " + g);
 		
 		//start game only if not started already
 		if(g == null)
