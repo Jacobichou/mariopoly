@@ -19,6 +19,7 @@ public class Game {
 	
 	private static int playerCount; 
 	private static int roundNumber = 1;
+	private static boolean stepRound = true;
 	
 	private static Player winner;
 	
@@ -88,21 +89,28 @@ public class Game {
 //			}
 //		}
 		
-		if(!gameWon)
-		{
-			//refresh jsp 
-			try {
-				GameServlet.refresh(new Round(roundNumber, board.getPlayers()));
-			} catch (ServletException | IOException e) {
-				e.printStackTrace();
-			}
-			
-			System.out.println("Round # " + roundNumber++);
-			gameWon = nextRound(); 	
-			if (gameWon) {
-				endGame(); 
-			}
-		}
+//		if(!gameWon)
+//		{
+//			if(stepRound)
+//			{
+//				//refresh jsp 
+//				try {
+//					GameServlet.refresh(new Round(roundNumber, board.getPlayers()));
+//				} catch (ServletException | IOException e) {
+//					e.printStackTrace();
+//				}
+//				
+//				System.out.println("Round # " + roundNumber++);
+//				gameWon = nextRound(); 	
+//				if (gameWon) {
+//					endGame(); 
+//				}
+//				
+//				stepRound = false;
+//			}
+//		}
+		
+		stepRound();
 	}
 	
 	
@@ -271,4 +279,31 @@ public class Game {
 	}
 	
 	public static int getPlayerCount() { return playerCount; }
+	
+	public static void stepRound() throws InterruptedException
+	{
+		System.out.println("stepping round");
+		stepRound = true;
+		
+		if(!gameWon)
+		{
+			if(stepRound)
+			{
+				//refresh jsp 
+				try {
+					GameServlet.refresh(new Round(roundNumber, board.getPlayers()));
+				} catch (ServletException | IOException e) {
+					e.printStackTrace();
+				}
+				
+				System.out.println("Round # " + roundNumber++);
+				gameWon = nextRound(); 	
+				if (gameWon) {
+					endGame(); 
+				}
+				
+				stepRound = false;
+			}
+		}
+	}
 }

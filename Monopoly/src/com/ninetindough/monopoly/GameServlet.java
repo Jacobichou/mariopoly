@@ -61,6 +61,11 @@ public class GameServlet extends HttpServlet {
 			response.setCharacterEncoding("UTF-8");
 			CharSequence s = String.valueOf(round.getRoundNumber());
 			response.getWriter().append(s);
+			try {
+				Game.stepRound();
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
 		}
 
 	}
