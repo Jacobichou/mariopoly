@@ -4,30 +4,36 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<!-- <meta http-equiv="refresh" content="1"> -->
 <link rel="stylesheet" href="css/styles.css">
 <title>You are Playing Mario Monopoly</title>
 </head>
 <body>
+	<input id="playerCount" type="hidden" value="">
 	<img src="images/board.jpg" alt="board" />
-	<p>Number of Players: </p> <%= request.getAttribute("playerCount") %>
-	<p>Spaces: </p> <%= request.getAttribute("spaces") %>
-	${game}
+	
 	<br>
 	<p id="test"></p>
-	<input id="player" type="text" name="player" value="3">
+	<input id="loc" type="text" name="loc" value="3">
 	<button onClick="sendInfo()" type="button">Boop</button>
+	
+	<button onClick="roll()">Roll</button>
 	
 	<img id="baby" src="images/baby.gif" alt="Baby Yoshi" />
 	<img id="coin" src="images/coin.gif" alt="Coin" />
 	<img id="dragonCoin" src="images/dragonCoin.png" alt="Dragon Coin" />
 	
 	
-	<script>  
+	<script> 
+	
+		document.getElementById("playerCount").value = getParameterByName("playerCount");
+	
 	var request;  
 	function sendInfo()  
 	{  
-		var v = document.getElementById("player").value;
-		var url="/Monopoly/play?player=" + v;  
+		//var playerCount = document.getElementById("playerCount").value;
+		var playerCount = document.getElementById("playerCount").value;
+		var url="/Monopoly/play";//?playerCount=" + playerCount; 
 		  
 		if(window.XMLHttpRequest){  
 		request=new XMLHttpRequest();  
@@ -46,14 +52,21 @@
 	function getInfo(){  
 		if(request.readyState==4){  
 			var val=request.responseText;  
-			document.getElementById('test').innerHTML=val;  
+			document.getElementById('loc').innerHTML=val;  
 		}  
-	}  
+	}
+	
+	function getParameterByName(name) {
+	    name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+	    var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+	        results = regex.exec(location.search);
+	    return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+	}
   
 </script> 
 
 <script type="text/javascript">
-  setInterval(sendInfo,5000)
+  //setInterval(sendInfo,5000)
 </script>
 
 </body>

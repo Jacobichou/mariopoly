@@ -61,13 +61,21 @@ public class Board {
 		JSONParser parser = new JSONParser(); 
 		try {
 			
-			Object obj = parser.parse(new FileReader(PLAYERS_JSON)); 
-			JSONObject jsonObj = (JSONObject) obj; 
-			JSONArray jsonPlayers = (JSONArray) jsonObj.get("players"); 
-			Iterator<JSONObject> iterator = jsonPlayers.iterator(); 
-			while(iterator.hasNext()){
-				players.add(new Player(iterator.next())); 
-			} 
+				Object obj = parser.parse(new FileReader(PLAYERS_JSON)); 
+				JSONObject jsonObj = (JSONObject) obj; 
+				JSONArray jsonPlayers = (JSONArray) jsonObj.get("players"); 
+				Iterator<JSONObject> iterator = jsonPlayers.iterator(); 
+	//			while(iterator.hasNext()){
+	//				players.add(new Player(iterator.next())); 
+	//			} 
+				
+				for(int i=0; i < Game.getPlayerCount(); i++)
+				{
+					if(iterator.hasNext())
+					{
+						players.add(new Player(iterator.next()));
+					}
+				}
 			} catch (IOException | ParseException e){
 				e.printStackTrace();
 		}

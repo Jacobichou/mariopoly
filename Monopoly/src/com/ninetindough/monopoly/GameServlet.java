@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.flippedshield.monopoly.Game;
+import com.flippedshield.monopoly.Round;
 
 /**
  * Servlet implementation class GameServlet
@@ -20,41 +21,60 @@ public class GameServlet extends HttpServlet {
 	
 	private String playerCount;
 	private Game g;
+	private static HttpServletRequest request;
+	private static HttpServletResponse response;
 
     /**
      * Default constructor. 
      */
     public GameServlet() {
-    	g = new Game().run();
     }
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		playerCount = request.getParameter("playerCount");
-		request.setAttribute("playerCount", playerCount);
+		this.request = request;
+		this.response = response;
 		
-//		g = new Game().run();
-//		
-		request.setAttribute("spaces", g.getBoard().getSpaces().get(1).getName());
-//		request.setAttribute("game", g);
+//		playerCount = request.getParameter("playerCount") == null ? "2" : request.getParameter("playerCount");
 		
-//		RequestDispatcher rd = request.getRequestDispatcher("PlayGame.jsp");
-//		rd.forward(request, response);
+		if(playerCount == null)
+		{
+			playerCount = request.getParameter("playerCount");
+		}
 		
-		response.setContentType("text/plain");
-		response.setCharacterEncoding("UTF-8");
+		System.out.println("PLAYER " + playerCount);
+		System.out.println("GAME " + g);
 		
-		response.getWriter().write(g.getBoard().getSpaces().get(Integer.parseInt(request.getParameter("player"))).getName());
+		//start game only if not started already
+		if(g == null)
+		{
+			RequestDispatcher rd = request.getRequestDispatcher("PlayGame.jsp");
+			rd.forward(request, response);
+			g = new Game().run(playerCount);
+		}
+		
+//		response.setContentType("text/plain");
+//		response.setCharacterEncoding("UTF-8");
+		
+//		response.getWriter().write(g.getBoard().getSpaces().get(Integer.parseInt(request.getParameter("playerCount"))).getName());
+//		response.getWriter().write(g.getWinner().getName());
 //		response.getWriter().append("Served at: ").append(request.getContextPath());
 	}
-
+	
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		doGet(request, response);
+	}
+	
+	public static void refresh(Round round) throws ServletException, IOException
+	{
+		RequestDispatcher rd = request.getRequestDispatcher("PlayGame.jsp");
+		response.getWriter().append("BANNANANANS\n\r");
+		rd.forward(request, response);
 	}
 
 }

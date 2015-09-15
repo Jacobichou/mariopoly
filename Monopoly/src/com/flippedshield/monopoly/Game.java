@@ -1,7 +1,12 @@
 package com.flippedshield.monopoly;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
+
+import javax.servlet.ServletException;
+
+import com.ninetindough.monopoly.GameServlet;
 
 public class Game {
 	
@@ -17,6 +22,11 @@ public class Game {
 	
 	static Game game; 
 	
+	public Game(String playerCount){ 
+		setPlayerCount(playerCount);
+		initGame(); 
+	}
+	
 	public Game(){ 
 		initGame(); 
 	}
@@ -24,9 +34,9 @@ public class Game {
 	/**
 	 * Exposed method to start the game
 	 */
-	public Game run()
+	public Game run(String playerCount)
 	{
-//		initGame();
+		setPlayerCount(playerCount);
 		main(null);
 		
 		return this;
@@ -51,7 +61,30 @@ public class Game {
 		game = new Game(); 
 		playerCount = board.getPlayers().size(); 
 		setTurnOrder();
-		while(!gameWon){
+//		while(!gameWon){
+//			//refresh jsp 
+//			try {
+//				GameServlet.refresh();
+//			} catch (ServletException | IOException e) {
+//				e.printStackTrace();
+//			}
+//			
+//			System.out.println("Round # " + roundNumber++);
+//			gameWon = nextRound(); 	
+//			if (gameWon) {
+//				endGame(); 
+//			}
+//		}
+		
+		if(!gameWon)
+		{
+			//refresh jsp 
+			try {
+				GameServlet.refresh(new Round(roundNumber, board.getPlayers()));
+			} catch (ServletException | IOException e) {
+				e.printStackTrace();
+			}
+			
 			System.out.println("Round # " + roundNumber++);
 			gameWon = nextRound(); 	
 			if (gameWon) {
@@ -219,4 +252,11 @@ public class Game {
 	public void setWinner(Player winner) {
 		this.winner = winner;
 	}
+	
+	public void setPlayerCount(String playerCount)
+	{
+		Game.playerCount = Integer.parseInt(playerCount);
+	}
+	
+	public static int getPlayerCount() { return playerCount; }
 }
