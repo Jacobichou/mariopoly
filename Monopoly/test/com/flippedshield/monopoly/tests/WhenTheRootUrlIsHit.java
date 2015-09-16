@@ -1,6 +1,7 @@
 package com.flippedshield.monopoly.tests;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 import org.junit.After;
 import org.junit.Before;
@@ -9,6 +10,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import com.flippedshield.monopoly.pages.BoardPage;
 import com.flippedshield.monopoly.pages.IndexPage;
 import com.flippedshield.monopoly.pages.PageNotLoadedException;
 import com.ninetindough.monopoly.GameServlet;
@@ -52,6 +54,14 @@ public class WhenTheRootUrlIsHit {
 		IndexPage page = new IndexPage(driver);
 		
 		assertEquals("2", page.inspectPlayerCount());
+	}
+	
+	@Test
+	public void playButtonShouldNavigateToGameBoard() throws PageNotLoadedException
+	{
+		IndexPage page = new IndexPage(driver);
+		
+		assertTrue("Page returned was not a Board Page", page.useDefaultPlayerCountAndNavigateToGameBoard() instanceof BoardPage);
 	}
 
 }

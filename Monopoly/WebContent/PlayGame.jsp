@@ -11,6 +11,8 @@
 <title>You are Playing Mario Monopoly</title>
 </head>
 <body>
+    <h1 id="main-title">Playing Mariopoly</h1>
+
 	<input id="playerCount" type="hidden" value="">
 	<div id="board-container">
 		<%-- <img src="images/board.jpg" alt="board" /> --%>

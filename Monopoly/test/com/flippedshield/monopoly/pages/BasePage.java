@@ -37,6 +37,11 @@ public abstract class BasePage {
 		return wait.until(ExpectedConditions.presenceOfElementLocated(locator));
 	}
 	
+	public WebElement waitForClickable(By locator)
+	{
+		return wait.until(ExpectedConditions.elementToBeClickable(locator));
+	}
+	
 	/*
 	 * === GETTERS =========================================================
 	 */

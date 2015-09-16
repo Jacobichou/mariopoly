@@ -5,13 +5,13 @@ import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.Select;
 
-public class IndexPage extends BasePage {
+public class BoardPage extends BasePage {
 
 	private static final By TITLE_MAIN = By.id("main-title");
 	private static final By PLAYER_COUNT = By.name("playerCount");
 	private static final By PLAY_BUTTON = By.name("playButton");
 
-	public IndexPage(WebDriver driver) throws PageNotLoadedException {
+	public BoardPage(WebDriver driver) throws PageNotLoadedException {
 		super(driver);
 	}
 	
@@ -21,7 +21,7 @@ public class IndexPage extends BasePage {
 		try
 		{
 			super.waitForPresence(TITLE_MAIN);
-			super.waitForPresence(PLAY_BUTTON);
+//			super.waitForPresence(PLAY_BUTTON);
 			
 			return true;
 		} catch (NoSuchElementException e)
@@ -39,44 +39,9 @@ public class IndexPage extends BasePage {
 		return super.waitForPresence(TITLE_MAIN).getText();
 	}
 	
-	private String grabPlayerCount()
-	{
-		
-		Select select = new Select(waitForPresence(PLAYER_COUNT));
-		
-		return select.getFirstSelectedOption().getText();
-	}
-	
-	private IndexPage clickPlay()
-	{
-		super.waitForClickable(PLAY_BUTTON)
-			.click();
-		
-		return this;
-	}
-	
 	
 	/*
 	 * === SERVICES ========================================================
 	 */
-	public String inspectHeading()
-	{
-		String heading = grabHeading();
-		
-		return heading;
-	}
 	
-	public String inspectPlayerCount()
-	{
-		String playerCount = grabPlayerCount();
-		
-		return playerCount;
-	}
-	
-	public BoardPage useDefaultPlayerCountAndNavigateToGameBoard() throws PageNotLoadedException
-	{
-		clickPlay();
-		
-		return new BoardPage(driver());
-	}
 }
