@@ -10,7 +10,12 @@
 </head>
 <body>
 	<input id="playerCount" type="hidden" value="">
-	<img src="images/board.jpg" alt="board" />
+	<div id="board-container">
+		<img src="images/board.jpg" alt="board" />
+		<img id="baby" src="images/baby.gif" alt="Baby Yoshi" />
+		<img id="coin" src="images/coin.gif" alt="Coin" />
+		<img id="dragonCoin" src="images/dragonCoin.png" alt="Dragon Coin" />
+	</div>
 	
 	<br>
 	<p id="test"></p>
@@ -19,9 +24,7 @@
 	
 	<button onClick="roll()">Roll</button>
 	
-	<img id="baby" src="images/baby.gif" alt="Baby Yoshi" />
-	<img id="coin" src="images/coin.gif" alt="Coin" />
-	<img id="dragonCoin" src="images/dragonCoin.png" alt="Dragon Coin" />
+	
 	
 	
 	<script> 
@@ -66,7 +69,7 @@
 </script> 
 
 <script type="text/javascript">
-  //setInterval(sendInfo,5000)
+  setInterval(sendInfo,5000)
 </script>
 
 </body>
