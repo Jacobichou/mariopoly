@@ -69,7 +69,7 @@
 </script> 
 
 <script type="text/javascript">
-  setInterval(sendInfo,5000)
+  setInterval(sendInfo,3500)
 </script>
 
 </body>

@@ -3,28 +3,45 @@
     <head>
         <meta charset="utf-8">
         <title>Mariopoly</title>
+        <link rel="stylesheet" href="css/foundation.min.css" media="screen" title="no title" charset="utf-8">
+        <link rel="stylesheet" href="css/normalize.css" media="screen" title="no title" charset="utf-8">
     </head>
     <body>
-        <h1>THIS IS....</h1>
-        <h3>Mario Monopoly!</h3>
+        <div class="row">
+            <div class="small-6 large-6 columns">
+                <h1>THIS IS....</h1>
+                <h3>Mario Monopoly!</h3>
 
-		<form class="" action="/Monopoly/play" method="get">
-			<input type="hidden" value="1" name="newGame">
-            <label for="playerCount">Select Player Count</label>
-		    <select class="" name="playerCount">
-		        <option value="2">2</option>
-		        <option value="3">3</option>
-		        <option value="4">4</option>
-		        <option value="5">5</option>
-		        <option value="6">6</option>
-		        <option value="7">7</option>
-		        <option value="8">8</option>
-		    </select>
-            <br>
-            <button type="submit" name="submit">PLAY THAT GAME BRO</button>
-		</form>
+                <div class="row">
+                    <div class="small-12 large-12 columns">
+                        <form class="" action="/Monopoly/play" method="get">
+                			<input type="hidden" value="1" name="newGame">
+                            <label for="playerCount">Select Player Count</label>
+                		    <select class="" name="playerCount">
+                		        <option value="2">2</option>
+                		        <option value="3">3</option>
+                		        <option value="4">4</option>
+                		        <option value="5">5</option>
+                		        <option value="6">6</option>
+                		        <option value="7">7</option>
+                		        <option value="8">8</option>
+                		    </select>
+                            <br>
+                            <button class="button expand" type="submit" name="submit">PLAY THAT GAME BRO</button>
+                		</form>
+                    </div>
+                </div>
 
-		<hr>
-        <img src="images/gameInstructions.jpg" alt="Instructions" />
+            </div>
+
+            <div class="small-6 large-6 columns">
+                <ul class="small-block-grid-1">
+                    <li><img class="th" src="images/gameInstructions.jpg" alt="Instructions" /></li>
+                </ul>
+            </div>
+        </div>
+
+        <script src="js/vendor/jquery.js" charset="utf-8"></script>
+        <script src="js/foundation.min.js" charset="utf-8"></script>
     </body>
 </html>
