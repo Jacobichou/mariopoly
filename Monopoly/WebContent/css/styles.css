@@ -21,3 +21,31 @@
     width: 25px;
     height: 30px;
 }
+
+.board-left
+{
+	background-color:blue;
+	width:40%;
+	height:40px;
+}
+
+.board-right
+{
+	background-color:blue;
+	width:40%;
+	height:40px;
+}
+
+.board-top
+{
+	background-color:green;
+	width:60px;
+	height:1em;
+}
+
+.board-bottom
+{
+	background-color:green;
+	width:60px;
+	height:1em;
+}
