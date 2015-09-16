@@ -34,6 +34,24 @@ body {
     height: 30px;
 }
 
+.board-spaces > div {
+	border: 1px solid black;
+	background-color: #C6E2FF;
+	height:82px;
+	width:82px;
+}
+
+#test
+{
+	position: fixed;
+    top: 2em;
+    left: 4em;
+}
+
+.board-center {
+	border: none !important;
+}
+
 .board-left
 {
 	background-color:blue;
