@@ -12,7 +12,7 @@
         <input id="playerCount" type="hidden" value="">
 
 	<!-- <button onClick="sendInfo()" type="button">Boop</button> -->
-	<button onClick="move()" type="button">Move</button>
+	<button onClick="move('baby')" type="button">Move</button>
 
     <div class="row board-spaces">
     	<h1 id="main-title">Playing Mariopoly</h1>
@@ -303,11 +303,11 @@
 	}
 	
 	var babyPos = 0;
-	function move()
+	function move(id)
 	{
 		babyPos = babyPos + 1;
-		$("#baby").remove();
-		$('#space-'+babyPos).prepend('<img id="baby" src="images/baby.gif" />');
+		$("#"+id).remove();
+		$('#space-'+babyPos).prepend('<img id="' + id + '" src="images/' + id + '.gif" />');
 	}
 
 </script>
