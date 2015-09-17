@@ -13,12 +13,7 @@
 <body>
 	<input id="playerCount" type="hidden" value="">
 	<div id="board-container">
-		<%-- <img src="images/board.jpg" alt="board" /> --%>
-		<%-- <img id="baby" src="images/baby.gif" alt="Baby Yoshi" />
-		<img id="coin" src="images/coin.gif" alt="Coin" />
-		<img id="dragonCoin" src="images/dragonCoin.png" alt="Dragon Coin" /> --%>
-	</div>
-
+	
 	<%-- <input id="loc" type="text" name="loc" value="3"> --%>
 	
     <div class="row board-spaces">
@@ -224,7 +219,7 @@
 
     <div class="row board-spaces">
         <div class="small-1 large-1 columns">
-            <p id="test"></p>
+         	<p id="test"></p>
         </div>
         <div id="space-10" class="small-1 large-1 columns jail-space">
         </div>
@@ -262,6 +257,10 @@
     		<img id="star" src="images/star.gif" alt="Star" />
         </div>
     </div>
+	
+	</div>
+
+	
 
     <script src="js/vendor/jquery.js" charset="utf-8"></script>
     <script src="js/foundation.min.js" charset="utf-8"></script>
