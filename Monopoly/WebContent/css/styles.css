@@ -4,6 +4,12 @@ body {
     background-color: #cccccc;
 }
 
+.winrar {
+	background-image: url("../images/winrar.gif");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
 #board-container {
 	margin-top: -30px !important;
 }
@@ -88,6 +94,10 @@ body {
     left: 4em;
     width:4em;
     
+}
+
+.player-info{
+	position:fixed;
 }
 
 .board-center {

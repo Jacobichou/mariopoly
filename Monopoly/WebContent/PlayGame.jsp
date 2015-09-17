@@ -66,13 +66,21 @@
 
     <div class="row board-spaces">
         <div class="small-1 large-1 columns board-nomansland">
-            
         </div>
         <div id="space-19" class="small-1 large-1 columns">
             $200
 
         </div>
         <div class="small-9 large-9 columns text-center board-center">
+            <div id="roll-data"></div>
+            <div id="player-1" class="player-info">
+            	<h4 id="player-1-name">Player 1</h4>
+				<ul class="inline-list">
+					<li id="player-1-token"></li>
+				  	<li><strong>Wealth</strong></li>
+				  	<li id="player-1-wealth">$500</li>
+				</ul>
+            </div>
             
         </div>
         <div id="space-31" class="small-1 large-1 columns">
@@ -90,7 +98,15 @@
 
         </div>
         <div class="small-9 large-9 columns text-center board-center">
-
+			<div id="player-2" class="player-info">
+            	<h4 id="player-2-name">Player 2</h4>
+				<ul class="inline-list">
+					<li id="player-2-token"></li>
+				  	<li><strong>Wealth</strong></li>
+				  	<li id="player-2-wealth">$500</li>
+				</ul>
+            </div>
+            
         </div>
         <div id="space-32" class="small-1 large-1 columns">
             $300
@@ -106,7 +122,14 @@
 
         </div>
         <div class="small-9 large-9 columns text-center board-center">
-
+			<div id="player-3" class="player-info">
+            	<h4 id="player-3-name">Player 3</h4>
+				<ul class="inline-list">
+				  <li id="player-3-token"></li>
+				  <li><strong>Wealth</strong></li>
+				  <li id="player-3-wealth">$500</li>
+				</ul>
+            </div>
         </div>
         <div id="space-33" class="small-1 large-1 columns chest-space">
 
@@ -293,7 +316,8 @@
 	function getInfo(){
 		if(request.readyState==4){
 			val=request.responseText;
-			document.getElementById('test').innerHTML=val;
+			//document.getElementById('test').innerHTML=val;
+			
 		}
 	}
 
@@ -309,33 +333,34 @@
 		var obj = jQuery.parseJSON(val);
 		console.log(obj);
 		
-		var tokens = [];
 		var oj = obj.players;
 	
 		if(!(oj[0].player1 === 'undefined')){
-			console.log(oj[0].player1.token);
-			tokens.push(oj[0].player1.token);
+			$("#"+oj[0].player1.token).remove();
+			$('#space-'+oj[0].player1.position).prepend('<img id="' + oj[0].player1.token + '" src="images/' + oj[0].player1.token + '.gif" />');
+			document.getElementById('player-1-name').innerHTML = oj[0].player1.name;
+			$('#icon-' + oj[0].player1.token).remove();
+			$('#player-1-token').prepend('<img id="icon-' + oj[0].player1.token + '" src="images/' + oj[0].player1.token + '.gif" />');
+			document.getElementById('player-1-wealth').innerHTML = "$" + oj[0].player1.wealth;
+			
 		}
 		if(!(oj[1].player2 === 'undefined')){
-			console.log(oj[1].player2.token);
-			tokens.push(oj[1].player2.token);
+			$("#"+oj[1].player2.token).remove();
+			$('#space-'+oj[1].player2.position).prepend('<img id="' + oj[1].player2.token + '" src="images/' + oj[1].player2.token + '.gif" />');
+			document.getElementById('player-2-name').innerHTML = oj[1].player2.name;
+			$('#icon-' + oj[1].player2.token).remove();
+			$('#player-2-token').prepend('<img id="icon-' + oj[1].player2.token + '" src="images/' + oj[1].player2.token + '.gif" />');
+			document.getElementById('player-2-wealth').innerHTML = "$" + oj[1].player2.wealth;
 		}
 		if(!(oj[2].player3 === 'undefined')){
-			console.log(oj[2].player3.token);
-			tokens.push(oj[2].player3.token);
+			$("#"+oj[2].player3.token).remove();
+			$('#space-'+oj[2].player3.position).prepend('<img id="' + oj[2].player3.token + '" src="images/' + oj[2].player3.token + '.gif" />');
+			document.getElementById('player-3-name').innerHTML = oj[2].player3.name;
+			$('#icon-' + oj[2].player3.token).remove();
+			$('#player-3-token').prepend('<img id="icon-' + oj[2].player3.token + '" src="images/' + oj[2].player3.token + '.gif" />');
+			document.getElementById('player-3-wealth').innerHTML = "$" + oj[2].player3.wealth;
 		}
 		
-			$("#"+oj[0].player1.token).remove();
-			$('#space-'+oj[0].player1.position).prepend('<img id="' + tokens[0] + '" src="images/' + tokens[0] + '.gif" />');
-			
-			$("#"+oj[1].player2.token).remove();
-			$('#space-'+oj[1].player2.position).prepend('<img id="' + tokens[1] + '" src="images/' + tokens[1] + '.gif" />');
-			
-			$("#"+oj[2].player3.token).remove();
-			$('#space-'+oj[2].player3.position).prepend('<img id="' + tokens[2] + '" src="images/' + tokens[2] + '.gif" />');
-
-		//$("#"+obj.player2.token).remove();
-		//$('#space-'+obj.player2.position).prepend('<img id="' + obj.player2.token + '" src="images/' + obj.player2.token + '.gif" />');
 	}
 	
 	function roll()
@@ -348,7 +373,6 @@
 
 <script type="text/javascript">
 	 //setInterval(sendInfo(),3500);
-	 setTimeout(function(){roll()},3000)
 </script>
 
 </body>
