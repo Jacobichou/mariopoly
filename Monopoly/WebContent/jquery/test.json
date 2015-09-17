@@ -1,0 +1,20 @@
+{
+    "player1": {
+        "wealth": 280,
+        "name": "Derek",
+        "position": 32,
+        "token": "dragonCoin"
+    },
+    "player2": {
+        "wealth": 34,
+        "name": "Jon",
+        "position": 32,
+        "token": "($)"
+    },
+    "player3": {
+        "wealth": 386,
+        "name": "Joey",
+        "position": 11,
+        "token": "#"
+    }
+}

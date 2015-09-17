@@ -21,54 +21,54 @@
 
 	<%-- <input id="loc" type="text" name="loc" value="3"> --%>
 	<button onClick="sendInfo()" type="button">Boop</button>
-	<button onClick="move()" type="button">Move</button>
+	<button onClick="move('baby')" type="button">Move</button>
 
     <div class="row board-spaces">
     	<h1 id="main-title">Playing Mariopoly</h1>
         <div class="small-1 large-1 columns">
             -
         </div>
-        <div id="space-1" class="small-1 large-1 columns">
-            1
+        <div id="space-20" class="small-1 large-1 columns">
+            20
         </div>
-        <div id="space-2" class="small-1 large-1 columns">
-            2
+        <div id="space-21" class="small-1 large-1 columns">
+            21
 
         </div>
-        <div id="space-3" class="small-1 large-1 columns">
-            3
+        <div id="space-22" class="small-1 large-1 columns">
+            22
 
         </div>
-        <div id="space-4" class="small-1 large-1 columns">
-            4
+        <div id="space-23" class="small-1 large-1 columns">
+            23
 
         </div>
-        <div id="space-5" class="small-1 large-1 columns">
-            5
+        <div id="space-24" class="small-1 large-1 columns">
+            24
 
         </div>
-        <div id="space-6" class="small-1 large-1 columns">
-            6
+        <div id="space-25" class="small-1 large-1 columns">
+            26
 
         </div>
-        <div id="space-7" class="small-1 large-1 columns">
-            7
+        <div id="space-26" class="small-1 large-1 columns">
+           26
 
         </div>
-        <div id="space-8" class="small-1 large-1 columns">
-            8
+        <div id="space-27" class="small-1 large-1 columns">
+            27
 
         </div>
-        <div id="space-9" class="small-1 large-1 columns">
-            9
+        <div id="space-28" class="small-1 large-1 columns">
+            28
 
         </div>
-        <div id="space-10" class="small-1 large-1 columns">
-            10
+        <div id="space-29" class="small-1 large-1 columns">
+            29
 
         </div>
-        <div id="space-11" class="small-1 large-1 columns">
-            11
+        <div id="space-30" class="small-1 large-1 columns">
+            30
         </div>
     </div>
 
@@ -78,15 +78,15 @@
         <div class="small-1 large-1 columns">
             -
         </div>
-        <div id="space-40" class="small-1 large-1 columns">
-            40
+        <div id="space-19" class="small-1 large-1 columns">
+            19
 
         </div>
         <div class="small-9 large-9 columns text-center board-center">
             DA MEEDUL
         </div>
-        <div id="space-12" class="small-1 large-1 columns">
-            12
+        <div id="space-31" class="small-1 large-1 columns">
+            31
 
         </div>
     </div>
@@ -94,135 +94,135 @@
     <div class="row board-spaces">
         <div class="small-1 large-1 columns">
             -
-        </div>
-        <div id="space-39" class="small-1 large-1 columns">
-            39
-
-        </div>
-        <div class="small-9 large-9 columns text-center board-center">
-            DA MEEDUL
-        </div>
-        <div id="space-13" class="small-1 large-1 columns">
-            13
-
-        </div>
-    </div>
-
-    <div class="row board-spaces">
-        <div class="small-1 large-1 columns">
-            -
-        </div>
-        <div id="space-38" class="small-1 large-1 columns">
-            38
-
-        </div>
-        <div class="small-9 large-9 columns text-center board-center">
-            DA MEEDUL
-        </div>
-        <div id="space-14" class="small-1 large-1 columns">
-            14
-
-        </div>
-    </div>
-
-    <div class="row board-spaces">
-        <div class="small-1 large-1 columns">
-            -
-        </div>
-        <div id="space-37" class="small-1 large-1 columns">
-            37
-
-        </div>
-        <div class="small-9 large-9 columns text-center board-center">
-            DA MEEDUL
-        </div>
-        <div id="space-15" class="small-1 large-1 columns">
-            15
-
-        </div>
-    </div>
-
-    <div class="row board-spaces">
-        <div class="small-1 large-1 columns">
-            -
-        </div>
-        <div id="space-36" class="small-1 large-1 columns">
-            36
-
-        </div>
-        <div class="small-9 large-9 columns text-center board-center">
-            DA MEEDUL
-        </div>
-        <div id="space-16" class="small-1 large-1 columns">
-            16
-
-        </div>
-    </div>
-
-    <div class="row board-spaces">
-        <div class="small-1 large-1 columns">
-            -
-        </div>
-        <div id="space-35" class="small-1 large-1 columns">
-            35
-
-        </div>
-        <div class="small-9 large-9 columns text-center board-center">
-            DA MEEDUL
-        </div>
-        <div id="space-17" class="small-1 large-1 columns">
-            17
-
-        </div>
-    </div>
-
-    <div class="row board-spaces">
-        <div class="small-1 large-1 columns">
-            -
-        </div>
-        <div id="space-34" class="small-1 large-1 columns">
-            34
-
-        </div>
-        <div class="small-9 large-9 columns text-center board-center">
-            DA MEEDUL
         </div>
         <div id="space-18" class="small-1 large-1 columns">
             18
 
         </div>
-    </div>
-
-    <div class="row board-spaces">
-        <div class="small-1 large-1 columns">
-            -
-        </div>
-        <div id="space-33" class="small-1 large-1 columns">
-            33
-
-        </div>
         <div class="small-9 large-9 columns text-center board-center">
             DA MEEDUL
-        </div>
-        <div id="space-19" class="small-1 large-1 columns">
-            19
-
-        </div>
-    </div>
-
-    <div class="row board-spaces">
-        <div class="small-1 large-1 columns">
-            -
         </div>
         <div id="space-32" class="small-1 large-1 columns">
             32
 
         </div>
+    </div>
+
+    <div class="row board-spaces">
+        <div class="small-1 large-1 columns">
+            -
+        </div>
+        <div id="space-17" class="small-1 large-1 columns">
+            17
+
+        </div>
         <div class="small-9 large-9 columns text-center board-center">
             DA MEEDUL
         </div>
-        <div id="space-20" class="small-1 large-1 columns">
-            20
+        <div id="space-33" class="small-1 large-1 columns">
+            33
+
+        </div>
+    </div>
+
+    <div class="row board-spaces">
+        <div class="small-1 large-1 columns">
+            -
+        </div>
+        <div id="space-16" class="small-1 large-1 columns">
+            16
+
+        </div>
+        <div class="small-9 large-9 columns text-center board-center">
+            DA MEEDUL
+        </div>
+        <div id="space-34" class="small-1 large-1 columns">
+            34
+
+        </div>
+    </div>
+
+    <div class="row board-spaces">
+        <div class="small-1 large-1 columns">
+            -
+        </div>
+        <div id="space-15" class="small-1 large-1 columns">
+            15
+
+        </div>
+        <div class="small-9 large-9 columns text-center board-center">
+            DA MEEDUL
+        </div>
+        <div id="space-35" class="small-1 large-1 columns">
+            35
+
+        </div>
+    </div>
+
+    <div class="row board-spaces">
+        <div class="small-1 large-1 columns">
+            -
+        </div>
+        <div id="space-14" class="small-1 large-1 columns">
+            14
+
+        </div>
+        <div class="small-9 large-9 columns text-center board-center">
+            DA MEEDUL
+        </div>
+        <div id="space-36" class="small-1 large-1 columns">
+            36
+
+        </div>
+    </div>
+
+    <div class="row board-spaces">
+        <div class="small-1 large-1 columns">
+            -
+        </div>
+        <div id="space-13" class="small-1 large-1 columns">
+            13
+
+        </div>
+        <div class="small-9 large-9 columns text-center board-center">
+            DA MEEDUL
+        </div>
+        <div id="space-37" class="small-1 large-1 columns">
+            37
+
+        </div>
+    </div>
+
+    <div class="row board-spaces">
+        <div class="small-1 large-1 columns">
+            -
+        </div>
+        <div id="space-12" class="small-1 large-1 columns">
+            12
+
+        </div>
+        <div class="small-9 large-9 columns text-center board-center">
+            DA MEEDUL
+        </div>
+        <div id="space-38" class="small-1 large-1 columns">
+            38
+
+        </div>
+    </div>
+
+    <div class="row board-spaces">
+        <div class="small-1 large-1 columns">
+            -
+        </div>
+        <div id="space-11" class="small-1 large-1 columns">
+            11
+
+        </div>
+        <div class="small-9 large-9 columns text-center board-center">
+            DA MEEDUL
+        </div>
+        <div id="space-39" class="small-1 large-1 columns">
+            39
 
         </div>
     </div>
@@ -233,37 +233,37 @@
         <div class="small-1 large-1 columns">
             <p id="test"></p>
         </div>
-        <div id="space-31" class="small-1 large-1 columns">
-            31
+        <div id="space-10" class="small-1 large-1 columns">
+            10
         </div>
-        <div id="space-30" class="small-1 large-1 columns">
-            30
+        <div id="space-9" class="small-1 large-1 columns">
+            9
         </div>
-        <div id="space-29" class="small-1 large-1 columns">
-            29
+        <div id="space-8" class="small-1 large-1 columns">
+            8
         </div>
-        <div id="space-28" class="small-1 large-1 columns">
-            28
+        <div id="space-7" class="small-1 large-1 columns">
+            7
         </div>
-        <div id="space-27" class="small-1 large-1 columns">
-            27
+        <div id="space-6" class="small-1 large-1 columns">
+            6
         </div>
-        <div id="space-26" class="small-1 large-1 columns">
-            26
+        <div id="space-5" class="small-1 large-1 columns">
+            5
         </div>
-        <div id="space-25" class="small-1 large-1 columns">
-            25
+        <div id="space-4" class="small-1 large-1 columns">
+            4
         </div>
-        <div id="space-24" class="small-1 large-1 columns">
-            24
+        <div id="space-3" class="small-1 large-1 columns">
+            3
         </div>
-        <div id="space-23" class="small-1 large-1 columns">
-            23
+        <div id="space-2" class="small-1 large-1 columns">
+            2
         </div>
-        <div id="space-22" class="small-1 large-1 columns">
-            22
+        <div id="space-1" class="small-1 large-1 columns">
+            1
         </div>
-        <div id="space-21" class="small-1 large-1 columns go-space">
+        <div id="space-0" class="small-1 large-1 columns go-space">
             <img id="baby" src="images/baby.gif" alt="Baby Yoshi" />
     		<img id="coin" src="images/coin.gif" alt="Coin" />
     		<img id="dragonCoin" src="images/dragonCoin.png" alt="Dragon Coin" />
@@ -296,10 +296,10 @@
 		request.send();
 		}catch(e){alert("Unable to connect to server");}
 	}
-
+	var val;
 	function getInfo(){
 		if(request.readyState==4){
-			var val=request.responseText;
+			val=request.responseText;
 			document.getElementById('test').innerHTML=val;
 		}
 	}
@@ -311,12 +311,24 @@
 	    return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
 	}
 	
-	var babyPos = 0;
-	function move()
+	function extractPositions()
 	{
-		babyPos = babyPos + 1;
-		$("#baby").remove();
-		$('#space-'+babyPos).prepend('<img id="baby" src="images/baby.gif" />');
+		var obj = jQuery.parseJSON(val);
+		console.log(obj);
+	}
+	
+	var babyPos = 0;
+	function move(id)
+	{
+		var obj = jQuery.parseJSON(val);
+		console.log(obj);
+		
+		$("#"+obj.player2.token).remove();
+		$('#space-'+obj.player2.position).prepend('<img id="' + obj.player2.token + '" src="images/' + obj.player2.token + '.gif" />');
+		
+		//babyPos = babyPos + 1;
+		//$("#"+id).remove();
+		//$('#space-'+babyPos).prepend('<img id="' + id + '" src="images/' + id + '.gif" />');
 	}
 
 </script>

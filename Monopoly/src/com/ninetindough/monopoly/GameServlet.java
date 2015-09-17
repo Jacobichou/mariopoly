@@ -2,6 +2,7 @@ package com.ninetindough.monopoly;
 
 import java.io.IOException;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.Map;
 
 import javax.servlet.RequestDispatcher;
@@ -11,6 +12,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 
 import com.flippedshield.monopoly.Game;
@@ -72,34 +74,47 @@ public class GameServlet extends HttpServlet {
 			}
 		} else
 		{
-			response.setContentType("text/plain");
+			response.setContentType("application/json");
 			response.setCharacterEncoding("UTF-8");
 //			if(round!=null){
 				CharSequence s = String.valueOf(round.getRoundNumber());
-				response.getWriter().append("<h5>Round: " + s + "</h5><hr>");
+//				response.getWriter().append("<h5>Round: " + s + "</h5><hr>");
 //			}
-				for(Player p : round.getPlayers())
-				{
-//					people.replace(p.getName(), String.valueOf(p.getWealth()));
-				}
-//				
-//				Iterator it = people.entrySet().iterator();
-//				while(it.hasNext())
-//				{
-//					Map.Entry pair = (Map.Entry)it.next();
-//					System.out.println("KLSJFLK" + pair.getValue());
-//				}
 				
-				for(Player p : round.getPlayers())
+				JSONObject responseObj = new JSONObject();
+				JSONArray playerArray = new JSONArray();
+				Iterator it = people.entrySet().iterator();
+				
+				responseObj.put("round", s);
+				
+				while(it.hasNext())
 				{
-					if(people.keySet().contains(p.getName()))
+					Map.Entry pair;
+					pair = (Map.Entry)it.next();
+					Player j = (Player) pair.getValue();
+					
+					if(round.getPlayers().contains(j))
 					{
-						System.out.println("Found " + p.getName());
-					} else {
-						System.out.println(p.getName() + " is bankrupt");
+						System.out.println("I FOUND " + j.getName());
+					} else
+					{
+						System.out.println(j.getName() + " WAS NOWHERE TO BE FOUND");
 					}
+					
+//					JSONArray positions = new JSONArray();
+//					positions.add(j.getPlayerToken().getPosition());
+					JSONObject obj = new JSONObject();
+					obj.put("name", j.getName());
+					obj.put("position", j.getPlayerToken().getPosition());
+					obj.put("wealth", j.getWealth());
+					obj.put("token", j.getPlayerToken().getSymbol());
+					responseObj.put(pair.getKey(), obj);
 				}
-			
+				
+				
+				responseObj.writeJSONString(response.getWriter());
+				
+			/*
 			for(int i = 0; i < people.size(); i++){
 //				response.getWriter().append("Player " + (i+1) + ": " + players[i] + "<br />");
 //				response.getWriter().append("Money: $" + String.valueOf(round.getPlayers().get(i).getWealth()) + "<br /><hr>");
@@ -111,12 +126,13 @@ public class GameServlet extends HttpServlet {
 				obj.writeJSONString(response.getWriter());
 				
 			}
-			
+			*/
 			try {
 				Game.stepRound();
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
+			
 		}
 
 	}
