@@ -11,7 +11,7 @@
 
         <input id="playerCount" type="hidden" value="">
 
-	<!-- <button onClick="sendInfo()" type="button">Boop</button> -->
+	<button onClick="sendInfo()" type="button">Boop</button>
 	<button onClick="move('baby')" type="button">Move</button>
 
     <div class="row board-spaces">
@@ -287,10 +287,10 @@
 		request.send();
 		}catch(e){alert("Unable to connect to server");}
 	}
-
+	var val;
 	function getInfo(){
 		if(request.readyState==4){
-			var val=request.responseText;
+			val=request.responseText;
 			document.getElementById('test').innerHTML=val;
 		}
 	}
@@ -302,12 +302,19 @@
 	    return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
 	}
 	
+	function extractPositions()
+	{
+		var obj = jQuery.parseJSON(val);
+		console.log(obj.positions);
+	}
+	
 	var babyPos = 0;
 	function move(id)
 	{
 		babyPos = babyPos + 1;
 		$("#"+id).remove();
 		$('#space-'+babyPos).prepend('<img id="' + id + '" src="images/' + id + '.gif" />');
+		extractPositions();
 	}
 
 </script>

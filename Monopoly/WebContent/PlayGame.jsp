@@ -20,7 +20,7 @@
 	</div>
 
 	<%-- <input id="loc" type="text" name="loc" value="3"> --%>
-	<!-- <button onClick="sendInfo()" type="button">Boop</button> -->
+	<button onClick="sendInfo()" type="button">Boop</button>
 	<button onClick="move()" type="button">Move</button>
 
     <div class="row board-spaces">
@@ -322,7 +322,7 @@
 </script>
 
 <script type="text/javascript">
-  setInterval(sendInfo,3500)
+  //setInterval(sendInfo,3500)
 </script>
 
 </body>
