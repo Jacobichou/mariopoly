@@ -34,7 +34,7 @@ public class Board {
 	
 	public Board() {
 		initPlayers();
-		die = new Die(10);
+		die = new Die(6);
 		initBigFunCards();
 		initContingencyCards();
 		try {

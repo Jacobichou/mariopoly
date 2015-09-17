@@ -20,13 +20,13 @@
 	</div>
 
 	<%-- <input id="loc" type="text" name="loc" value="3"> --%>
-	<button onClick="sendInfo()" type="button">Boop</button>
-	<button onClick="move('baby')" type="button">Move</button>
+	<button onClick="roll()" type="button">Roll</button>
+	
 
     <div class="row board-spaces">
     	<h1 id="main-title">Playing Mariopoly</h1>
-        <div class="small-1 large-1 columns">
-            -
+        <div class="small-1 large-1 columns board-nomansland">
+            
         </div>
         <div id="space-20" class="small-1 large-1 columns">
             20
@@ -75,15 +75,15 @@
     <!-- MIDDLE  -->
 
     <div class="row board-spaces">
-        <div class="small-1 large-1 columns">
-            -
+        <div class="small-1 large-1 columns board-nomansland">
+            
         </div>
         <div id="space-19" class="small-1 large-1 columns">
             19
 
         </div>
         <div class="small-9 large-9 columns text-center board-center">
-            DA MEEDUL
+            
         </div>
         <div id="space-31" class="small-1 large-1 columns">
             31
@@ -92,15 +92,15 @@
     </div>
 
     <div class="row board-spaces">
-        <div class="small-1 large-1 columns">
-            -
+        <div class="small-1 large-1 columns board-nomansland">
+            
         </div>
         <div id="space-18" class="small-1 large-1 columns">
             18
 
         </div>
         <div class="small-9 large-9 columns text-center board-center">
-            DA MEEDUL
+
         </div>
         <div id="space-32" class="small-1 large-1 columns">
             32
@@ -109,15 +109,15 @@
     </div>
 
     <div class="row board-spaces">
-        <div class="small-1 large-1 columns">
-            -
+        <div class="small-1 large-1 columns board-nomansland">
+            
         </div>
         <div id="space-17" class="small-1 large-1 columns">
             17
 
         </div>
         <div class="small-9 large-9 columns text-center board-center">
-            DA MEEDUL
+
         </div>
         <div id="space-33" class="small-1 large-1 columns">
             33
@@ -126,15 +126,15 @@
     </div>
 
     <div class="row board-spaces">
-        <div class="small-1 large-1 columns">
-            -
+        <div class="small-1 large-1 columns board-nomansland">
+            
         </div>
         <div id="space-16" class="small-1 large-1 columns">
             16
 
         </div>
         <div class="small-9 large-9 columns text-center board-center">
-            DA MEEDUL
+
         </div>
         <div id="space-34" class="small-1 large-1 columns">
             34
@@ -143,15 +143,15 @@
     </div>
 
     <div class="row board-spaces">
-        <div class="small-1 large-1 columns">
-            -
+        <div class="small-1 large-1 columns board-nomansland">
+            
         </div>
         <div id="space-15" class="small-1 large-1 columns">
             15
 
         </div>
         <div class="small-9 large-9 columns text-center board-center">
-            DA MEEDUL
+
         </div>
         <div id="space-35" class="small-1 large-1 columns">
             35
@@ -160,15 +160,15 @@
     </div>
 
     <div class="row board-spaces">
-        <div class="small-1 large-1 columns">
-            -
+        <div class="small-1 large-1 columns board-nomansland">
+            
         </div>
         <div id="space-14" class="small-1 large-1 columns">
             14
 
         </div>
         <div class="small-9 large-9 columns text-center board-center">
-            DA MEEDUL
+
         </div>
         <div id="space-36" class="small-1 large-1 columns">
             36
@@ -177,15 +177,15 @@
     </div>
 
     <div class="row board-spaces">
-        <div class="small-1 large-1 columns">
-            -
+        <div class="small-1 large-1 columns board-nomansland">
+            
         </div>
         <div id="space-13" class="small-1 large-1 columns">
             13
 
         </div>
         <div class="small-9 large-9 columns text-center board-center">
-            DA MEEDUL
+
         </div>
         <div id="space-37" class="small-1 large-1 columns">
             37
@@ -194,15 +194,15 @@
     </div>
 
     <div class="row board-spaces">
-        <div class="small-1 large-1 columns">
-            -
+        <div class="small-1 large-1 columns board-nomansland">
+            
         </div>
         <div id="space-12" class="small-1 large-1 columns">
             12
 
         </div>
         <div class="small-9 large-9 columns text-center board-center">
-            DA MEEDUL
+
         </div>
         <div id="space-38" class="small-1 large-1 columns">
             38
@@ -211,15 +211,15 @@
     </div>
 
     <div class="row board-spaces">
-        <div class="small-1 large-1 columns">
-            -
+        <div class="small-1 large-1 columns board-nomansland">
+            
         </div>
         <div id="space-11" class="small-1 large-1 columns">
             11
 
         </div>
         <div class="small-9 large-9 columns text-center board-center">
-            DA MEEDUL
+
         </div>
         <div id="space-39" class="small-1 large-1 columns">
             39
@@ -266,7 +266,10 @@
         <div id="space-0" class="small-1 large-1 columns go-space">
             <img id="baby" src="images/baby.gif" alt="Baby Yoshi" />
     		<img id="coin" src="images/coin.gif" alt="Coin" />
-    		<img id="dragonCoin" src="images/dragonCoin.png" alt="Dragon Coin" />
+    		<img id="dragonCoin" src="images/dragonCoin.gif" alt="Dragon Coin" />
+    		<img id="feather" src="images/feather.gif" alt="Feather" />
+    		<img id="fireFlower" src="images/fireFlower.gif" alt="Fire FLower" />
+    		<img id="star" src="images/star.gif" alt="Star" />
         </div>
     </div>
 
@@ -310,25 +313,31 @@
 	        results = regex.exec(location.search);
 	    return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
 	}
-	
+
 	function extractPositions()
 	{
 		var obj = jQuery.parseJSON(val);
 		console.log(obj);
 	}
-	
+
 	var babyPos = 0;
-	function move(id)
+	function move()
 	{
 		var obj = jQuery.parseJSON(val);
 		console.log(obj);
-		
+
 		$("#"+obj.player2.token).remove();
 		$('#space-'+obj.player2.position).prepend('<img id="' + obj.player2.token + '" src="images/' + obj.player2.token + '.gif" />');
-		
+
 		//babyPos = babyPos + 1;
 		//$("#"+id).remove();
 		//$('#space-'+babyPos).prepend('<img id="' + id + '" src="images/' + id + '.gif" />');
+	}
+	
+	function roll()
+	{
+		sendInfo();
+		move();
 	}
 
 </script>

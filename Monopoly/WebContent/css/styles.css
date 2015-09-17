@@ -41,6 +41,17 @@ body {
 	width:82px;
 }
 
+.board-spaces > div:first-of-type
+{
+	background-color: transparent;
+	border: none;
+}
+
+.board-spaces > img {
+	width:25px;
+	height:25px;
+}
+
 #test
 {
 	position: fixed;
@@ -50,6 +61,7 @@ body {
 
 .board-center {
 	border: none !important;
+	background-color: transparent !important;
 }
 
 .board-left
