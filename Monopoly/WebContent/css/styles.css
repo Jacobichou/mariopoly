@@ -6,8 +6,32 @@ body {
 
 .go-space {
 	background-image: url("../images/go.png");
-	width:100px;
-	height:100px;
+	background-size: 82px 82px;
+}
+
+.chest-space {
+	background-image: url("../images/exclamationMarkBlock.png");
+	background-size: 82px 82px;
+}
+
+.chance-space {
+	background-image: url("../images/questionMarkBlock.png");
+	background-size: 82px 82px;
+}
+
+.jail-space {
+	background-image: url("../images/jail.jpg");
+	background-size: 82px 82px;
+}
+
+.up-space {
+	background-image: url("../images/1up.png");
+	background-size: 82px 82px;
+}
+
+.go-to-jail-space {
+	background-image: url("../images/goToJail.png");
+	background-size: 82px 82px;
 }
 
 #coin {
@@ -47,10 +71,11 @@ body {
 	border: none;
 }
 
-.board-spaces > img {
+.board-spaces > div > img {
 	width:25px;
 	height:25px;
 }
+
 
 #test
 {

@@ -61,6 +61,7 @@ public class GameServlet extends HttpServlet {
 		if(g == null)
 		{
 			people = new HashMap<String, Player>();
+			
 			RequestDispatcher rd = request.getRequestDispatcher("PlayGame.jsp");
 			rd.forward(request, response);
 			g = new Game().run(playerCount);
@@ -84,12 +85,12 @@ public class GameServlet extends HttpServlet {
 				JSONObject responseObj = new JSONObject();
 				JSONArray playerArray = new JSONArray();
 				Iterator it = people.entrySet().iterator();
-				
+				Map.Entry pair = null;
 				responseObj.put("round", s);
 				
 				while(it.hasNext())
 				{
-					Map.Entry pair;
+					
 					pair = (Map.Entry)it.next();
 					Player j = (Player) pair.getValue();
 					
@@ -101,16 +102,18 @@ public class GameServlet extends HttpServlet {
 						System.out.println(j.getName() + " WAS NOWHERE TO BE FOUND");
 					}
 					
-//					JSONArray positions = new JSONArray();
-//					positions.add(j.getPlayerToken().getPosition());
 					JSONObject obj = new JSONObject();
 					obj.put("name", j.getName());
 					obj.put("position", j.getPlayerToken().getPosition());
 					obj.put("wealth", j.getWealth());
 					obj.put("token", j.getPlayerToken().getSymbol());
-					responseObj.put(pair.getKey(), obj);
+					
+					JSONObject playerObj = new JSONObject();
+					playerObj.put(pair.getKey(), obj);
+					playerArray.add(playerObj);
+//					responseObj.put(pair.getKey(), obj);
 				}
-				
+				responseObj.put("players", playerArray);
 				
 				responseObj.writeJSONString(response.getWriter());
 				

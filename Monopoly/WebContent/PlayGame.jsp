@@ -20,55 +20,50 @@
 	</div>
 
 	<%-- <input id="loc" type="text" name="loc" value="3"> --%>
-	<button onClick="roll()" type="button">Roll</button>
 	
-
     <div class="row board-spaces">
     	<h1 id="main-title">Playing Mariopoly</h1>
         <div class="small-1 large-1 columns board-nomansland">
-            
+            <button onClick="roll()" type="button">Roll</button>
         </div>
-        <div id="space-20" class="small-1 large-1 columns">
-            20
+        <div id="space-20" class="small-1 large-1 columns up-space">
         </div>
         <div id="space-21" class="small-1 large-1 columns">
-            21
+            $220
 
         </div>
-        <div id="space-22" class="small-1 large-1 columns">
-            22
+        <div id="space-22" class="small-1 large-1 columns chance-space">
 
         </div>
         <div id="space-23" class="small-1 large-1 columns">
-            23
+            $220
 
         </div>
         <div id="space-24" class="small-1 large-1 columns">
-            24
+            $240
 
         </div>
         <div id="space-25" class="small-1 large-1 columns">
-            26
+            $200
 
         </div>
         <div id="space-26" class="small-1 large-1 columns">
-           26
+           $200
 
         </div>
         <div id="space-27" class="small-1 large-1 columns">
-            27
+            $200
 
         </div>
         <div id="space-28" class="small-1 large-1 columns">
-            28
+            $150
 
         </div>
         <div id="space-29" class="small-1 large-1 columns">
-            29
+            $280
 
         </div>
-        <div id="space-30" class="small-1 large-1 columns">
-            30
+        <div id="space-30" class="small-1 large-1 columns go-to-jail-space">
         </div>
     </div>
 
@@ -79,14 +74,14 @@
             
         </div>
         <div id="space-19" class="small-1 large-1 columns">
-            19
+            $200
 
         </div>
         <div class="small-9 large-9 columns text-center board-center">
             
         </div>
         <div id="space-31" class="small-1 large-1 columns">
-            31
+            $300
 
         </div>
     </div>
@@ -96,14 +91,14 @@
             
         </div>
         <div id="space-18" class="small-1 large-1 columns">
-            18
+            $180
 
         </div>
         <div class="small-9 large-9 columns text-center board-center">
 
         </div>
         <div id="space-32" class="small-1 large-1 columns">
-            32
+            $300
 
         </div>
     </div>
@@ -112,15 +107,13 @@
         <div class="small-1 large-1 columns board-nomansland">
             
         </div>
-        <div id="space-17" class="small-1 large-1 columns">
-            17
+        <div id="space-17" class="small-1 large-1 columns chest-space">
 
         </div>
         <div class="small-9 large-9 columns text-center board-center">
 
         </div>
-        <div id="space-33" class="small-1 large-1 columns">
-            33
+        <div id="space-33" class="small-1 large-1 columns chest-space">
 
         </div>
     </div>
@@ -130,14 +123,14 @@
             
         </div>
         <div id="space-16" class="small-1 large-1 columns">
-            16
+            $180
 
         </div>
         <div class="small-9 large-9 columns text-center board-center">
 
         </div>
         <div id="space-34" class="small-1 large-1 columns">
-            34
+            $320
 
         </div>
     </div>
@@ -147,14 +140,14 @@
             
         </div>
         <div id="space-15" class="small-1 large-1 columns">
-            15
+            $200
 
         </div>
         <div class="small-9 large-9 columns text-center board-center">
 
         </div>
         <div id="space-35" class="small-1 large-1 columns">
-            35
+            $200
 
         </div>
     </div>
@@ -164,14 +157,14 @@
             
         </div>
         <div id="space-14" class="small-1 large-1 columns">
-            14
+            $160
 
         </div>
         <div class="small-9 large-9 columns text-center board-center">
 
         </div>
-        <div id="space-36" class="small-1 large-1 columns">
-            36
+        <div id="space-36" class="small-1 large-1 columns chance-space">
+           
 
         </div>
     </div>
@@ -181,14 +174,14 @@
             
         </div>
         <div id="space-13" class="small-1 large-1 columns">
-            13
+            $140
 
         </div>
         <div class="small-9 large-9 columns text-center board-center">
 
         </div>
         <div id="space-37" class="small-1 large-1 columns">
-            37
+            $330
 
         </div>
     </div>
@@ -198,14 +191,14 @@
             
         </div>
         <div id="space-12" class="small-1 large-1 columns">
-            12
+            $150
 
         </div>
         <div class="small-9 large-9 columns text-center board-center">
 
         </div>
         <div id="space-38" class="small-1 large-1 columns">
-            38
+            $120
 
         </div>
     </div>
@@ -215,14 +208,14 @@
             
         </div>
         <div id="space-11" class="small-1 large-1 columns">
-            11
+            $140
 
         </div>
         <div class="small-9 large-9 columns text-center board-center">
 
         </div>
         <div id="space-39" class="small-1 large-1 columns">
-            39
+            $400
 
         </div>
     </div>
@@ -233,35 +226,32 @@
         <div class="small-1 large-1 columns">
             <p id="test"></p>
         </div>
-        <div id="space-10" class="small-1 large-1 columns">
-            10
+        <div id="space-10" class="small-1 large-1 columns jail-space">
         </div>
         <div id="space-9" class="small-1 large-1 columns">
-            9
+            $120
         </div>
         <div id="space-8" class="small-1 large-1 columns">
-            8
+            $100
         </div>
-        <div id="space-7" class="small-1 large-1 columns">
-            7
+        <div id="space-7" class="small-1 large-1 columns chance-space">
         </div>
         <div id="space-6" class="small-1 large-1 columns">
-            6
+            $100
         </div>
         <div id="space-5" class="small-1 large-1 columns">
-            5
+            $200
         </div>
         <div id="space-4" class="small-1 large-1 columns">
-            4
+            TAX $200
         </div>
         <div id="space-3" class="small-1 large-1 columns">
-            3
+            $60
         </div>
-        <div id="space-2" class="small-1 large-1 columns">
-            2
+        <div id="space-2" class="small-1 large-1 columns chest-space">
         </div>
         <div id="space-1" class="small-1 large-1 columns">
-            1
+            $60
         </div>
         <div id="space-0" class="small-1 large-1 columns go-space">
             <img id="baby" src="images/baby.gif" alt="Baby Yoshi" />
@@ -299,7 +289,8 @@
 		request.send();
 		}catch(e){alert("Unable to connect to server");}
 	}
-	var val;
+	
+	var val;// = {"round":1, "players":[]};
 	function getInfo(){
 		if(request.readyState==4){
 			val=request.responseText;
@@ -314,24 +305,38 @@
 	    return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
 	}
 
-	function extractPositions()
-	{
-		var obj = jQuery.parseJSON(val);
-		console.log(obj);
-	}
-
-	var babyPos = 0;
 	function move()
 	{
 		var obj = jQuery.parseJSON(val);
 		console.log(obj);
+		
+		var tokens = [];
+		var oj = obj.players;
+	
+		if(!(oj[0].player1 === 'undefined')){
+			console.log(oj[0].player1.token);
+			tokens.push(oj[0].player1.token);
+		}
+		if(!(oj[1].player2 === 'undefined')){
+			console.log(oj[1].player2.token);
+			tokens.push(oj[1].player2.token);
+		}
+		if(!(oj[2].player3 === 'undefined')){
+			console.log(oj[2].player3.token);
+			tokens.push(oj[2].player3.token);
+		}
+		
+			$("#"+oj[0].player1.token).remove();
+			$('#space-'+oj[0].player1.position).prepend('<img id="' + tokens[0] + '" src="images/' + tokens[0] + '.gif" />');
+			
+			$("#"+oj[1].player2.token).remove();
+			$('#space-'+oj[1].player2.position).prepend('<img id="' + tokens[1] + '" src="images/' + tokens[1] + '.gif" />');
+			
+			$("#"+oj[2].player3.token).remove();
+			$('#space-'+oj[2].player3.position).prepend('<img id="' + tokens[2] + '" src="images/' + tokens[2] + '.gif" />');
 
-		$("#"+obj.player2.token).remove();
-		$('#space-'+obj.player2.position).prepend('<img id="' + obj.player2.token + '" src="images/' + obj.player2.token + '.gif" />');
-
-		//babyPos = babyPos + 1;
-		//$("#"+id).remove();
-		//$('#space-'+babyPos).prepend('<img id="' + id + '" src="images/' + id + '.gif" />');
+		//$("#"+obj.player2.token).remove();
+		//$('#space-'+obj.player2.position).prepend('<img id="' + obj.player2.token + '" src="images/' + obj.player2.token + '.gif" />');
 	}
 	
 	function roll()
@@ -343,7 +348,8 @@
 </script>
 
 <script type="text/javascript">
-  //setInterval(sendInfo,3500)
+	 //setInterval(sendInfo(),3500);
+	 setTimeout(function(){roll()},3000)
 </script>
 
 </body>
