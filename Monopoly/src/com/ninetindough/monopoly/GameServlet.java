@@ -27,7 +27,7 @@ public class GameServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	
 	private String playerCount;
-	private Game g;
+	private static Game g;
 	private static Round round;
 	private String[] players;
 	private Map<String, Player> people;

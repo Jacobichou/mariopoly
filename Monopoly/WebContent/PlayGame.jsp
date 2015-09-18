@@ -298,6 +298,7 @@
 		document.getElementById("playerCount").value = getParameterByName("playerCount");
 
 	var request;
+	
 	function sendInfo()
 	{
 		//var playerCount = document.getElementById("playerCount").value;
@@ -318,7 +319,6 @@
 		}catch(e){alert("Unable to connect to server");}
 	}
 	
-	//var val;// = {"round":1, "players":[]};
 	function getInfo(){
 		if(request.readyState==4){
 			var val=request.responseText;
