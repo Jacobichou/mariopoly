@@ -11,7 +11,7 @@
 </head>
 <body class="winrar">
 		<div class="row">
-		<div class="large-12 columns text-center"><%= request.getAttribute("winnerName") %></div>
+		<div class="large-12 columns text-center">EL WINNER ES <br><%= request.getAttribute("winnerName") %></div>
 		</div>
 </body>
 </html>
