@@ -54,7 +54,13 @@ public class GameServlet extends HttpServlet {
 		
 		if(request.getParameter("newGame") != null && request.getParameter("newGame").equals("1")){
 			g = null;
-//			round = null;
+		}
+		
+		if(round != null && round.getWinner() != null)
+		{
+			request.setAttribute("winnerName", round.getWinner().getName());
+			RequestDispatcher rd1 = request.getRequestDispatcher("Winner.jsp");
+			rd1.forward(request, response);
 		}
 		
 		//start game only if not started already
@@ -65,16 +71,17 @@ public class GameServlet extends HttpServlet {
 			RequestDispatcher rd = request.getRequestDispatcher("PlayGame.jsp");
 			rd.forward(request, response);
 			g = new Game().run(playerCount);
-//			players = new String[round.getPlayers().size()];
+
 			int i= 1;
 			for(Player p : round.getPlayers())
 			{
-//				players[round.getPlayers().indexOf(p)] = p.getName();
-//				people.put(p.getName(), String.valueOf(p.getWealth()));
 				people.put("player"+(i++), p);
 			}
 		} else
 		{
+			
+			
+			
 			response.setContentType("application/json");
 			response.setCharacterEncoding("UTF-8");
 //			if(round!=null){
@@ -87,6 +94,13 @@ public class GameServlet extends HttpServlet {
 				Iterator it = people.entrySet().iterator();
 				Map.Entry pair = null;
 				responseObj.put("round", s);
+				if(g.isGameWon())
+				{
+					responseObj.put("winner", g.getWinner().getName());
+				} else
+				{
+					responseObj.put("winner", "Keep playing suckas!");
+				}
 				
 				while(it.hasNext())
 				{
@@ -94,13 +108,13 @@ public class GameServlet extends HttpServlet {
 					pair = (Map.Entry)it.next();
 					Player j = (Player) pair.getValue();
 					
-					if(round.getPlayers().contains(j))
-					{
-						System.out.println("I FOUND " + j.getName());
-					} else
-					{
-						System.out.println(j.getName() + " WAS NOWHERE TO BE FOUND");
-					}
+//					if(round.getPlayers().contains(j))
+//					{
+//						System.out.println("I FOUND " + j.getName());
+//					} else
+//					{
+//						System.out.println(j.getName() + " WAS NOWHERE TO BE FOUND");
+//					}
 					
 					JSONObject obj = new JSONObject();
 					obj.put("name", j.getName());
@@ -130,13 +144,21 @@ public class GameServlet extends HttpServlet {
 				
 			}
 			*/
+	
+				
 			try {
-				Game.stepRound();
+				g.stepRound();
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
 			
+			
+			
+			
 		}
+		
+		
+		
 
 	}
 	

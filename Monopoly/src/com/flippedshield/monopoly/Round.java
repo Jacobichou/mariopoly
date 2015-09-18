@@ -6,11 +6,13 @@ public class Round {
 	
 	private int roundNumber;
 	private ArrayList<Player> players;
+	private Player winner;
 
-	public Round(int roundNumber, ArrayList<Player> players)
+	public Round(int roundNumber, ArrayList<Player> players, Player winner)
 	{
 		this.roundNumber = roundNumber;
 		this.players = players;
+		this.winner = winner;
 	}
 
 	public int getRoundNumber() {
@@ -27,5 +29,9 @@ public class Round {
 
 	public void setPlayers(ArrayList<Player> players) {
 		this.players = players;
+	}
+	
+	public Player getWinner() {
+		return winner;
 	}
 }

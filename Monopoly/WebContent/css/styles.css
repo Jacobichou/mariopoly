@@ -7,7 +7,9 @@ body {
 .winrar {
 	background-image: url("../images/winrar.gif");
     background-repeat: no-repeat;
-    background-size: 100% 100%;
+    background-size: 100% 110%;
+    margin-top: 4.5em;
+    font-size:5em;
 }
 
 #board-container {

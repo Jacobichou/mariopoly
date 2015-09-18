@@ -123,7 +123,9 @@ public class Game {
 		for (int i = 0; i < board.getPlayers().size(); i++){
 			nextTurn(i); 
 			if (board.getPlayers().size() == 1) {
-				winner = board.getPlayers().get(0);
+				
+				setWinner(board.getPlayers().get(0));
+//				System.out.println("*********** IS THE WINNE RSET " + getWinner());
 				System.out.println(board.getPlayers().get(0).getName() + " is the last person standing.");
 				System.out.println(board.getPlayers().get(0).getName() + " has won the game!!"); 
 				return true;
@@ -265,12 +267,12 @@ public class Game {
 	public static Bank getBank() { return bank; }
 	public static boolean getDebugMode() { return DEBUG_MODE; }
 
-	public Player getWinner() {
+	public static Player getWinner() {
 		return winner;
 	}
 
-	public void setWinner(Player winner) {
-		this.winner = winner;
+	public static void setWinner(Player w) {
+		winner = w;
 	}
 	
 	public void setPlayerCount(String playerCount)
@@ -282,19 +284,12 @@ public class Game {
 	
 	public static void stepRound() throws InterruptedException
 	{
-		System.out.println("stepping round");
 		stepRound = true;
 		
 		if(!gameWon)
 		{
 			if(stepRound)
 			{
-				//refresh jsp 
-				try {
-					GameServlet.refresh(new Round(roundNumber, board.getPlayers()));
-				} catch (ServletException | IOException e) {
-					e.printStackTrace();
-				}
 				
 				System.out.println("Round # " + roundNumber++);
 				gameWon = nextRound(); 	
@@ -302,8 +297,23 @@ public class Game {
 					endGame(); 
 				}
 				
+				//refresh jsp 
+				try {
+					GameServlet.refresh(new Round(roundNumber, board.getPlayers(), getWinner()));
+				} catch (ServletException | IOException e) {
+					e.printStackTrace();
+				}
+				
 				stepRound = false;
 			}
 		}
+	}
+
+	public static boolean isGameWon() {
+		return gameWon;
+	}
+
+	public static void setGameWon(boolean gameWon) {
+		Game.gameWon = gameWon;
 	}
 }

@@ -15,7 +15,6 @@
 	<div id="board-container">
 	
 	<%-- <input id="loc" type="text" name="loc" value="3"> --%>
-	
     <div class="row board-spaces">
     	<h1 id="main-title">Playing Mariopoly</h1>
         <div class="small-1 large-1 columns board-nomansland">
@@ -145,7 +144,14 @@
 
         </div>
         <div class="small-9 large-9 columns text-center board-center">
-
+			<div id="player-4" class="player-info">
+            	<h4 id="player-4-name">Player 4</h4>
+				<ul class="inline-list">
+				  <li id="player-4-token"></li>
+				  <li><strong>Wealth</strong></li>
+				  <li id="player-4-wealth">$500</li>
+				</ul>
+            </div>
         </div>
         <div id="space-34" class="small-1 large-1 columns">
             $320
@@ -312,12 +318,12 @@
 		}catch(e){alert("Unable to connect to server");}
 	}
 	
-	var val;// = {"round":1, "players":[]};
+	//var val;// = {"round":1, "players":[]};
 	function getInfo(){
 		if(request.readyState==4){
-			val=request.responseText;
+			var val=request.responseText;
 			//document.getElementById('test').innerHTML=val;
-			
+			move(val);
 		}
 	}
 
@@ -328,51 +334,92 @@
 	    return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
 	}
 
-	function move()
+	function move(val)
 	{
-		var obj = jQuery.parseJSON(val);
-		console.log(obj);
+		if(val.indexOf("YOU WON!!!!") >= 0){
+			location.reload();
+		}
 		
-		var oj = obj.players;
-	
-		if(!(oj[0].player1 === 'undefined')){
-			$("#"+oj[0].player1.token).remove();
-			$('#space-'+oj[0].player1.position).prepend('<img id="' + oj[0].player1.token + '" src="images/' + oj[0].player1.token + '.gif" />');
-			document.getElementById('player-1-name').innerHTML = oj[0].player1.name;
-			$('#icon-' + oj[0].player1.token).remove();
-			$('#player-1-token').prepend('<img id="icon-' + oj[0].player1.token + '" src="images/' + oj[0].player1.token + '.gif" />');
-			document.getElementById('player-1-wealth').innerHTML = "$" + oj[0].player1.wealth;
+		var obj;
+		if(val != null){
+			console.log("****this is val " + val);
+			obj = jQuery.parseJSON(val);
 			
+			console.log(obj);
+			
+			var oj = obj.players;
+		
+			if(oj[0].player1 != null){
+				$("#"+oj[0].player1.token).remove();
+				$('#space-'+oj[0].player1.position).prepend('<img id="' + oj[0].player1.token + '" src="images/' + oj[0].player1.token + '.gif" />');
+				document.getElementById('player-1-name').innerHTML = oj[0].player1.name;
+				$('#icon-' + oj[0].player1.token).remove();
+				$('#player-1-token').prepend('<img id="icon-' + oj[0].player1.token + '" src="images/' + oj[0].player1.token + '.gif" />');
+				document.getElementById('player-1-wealth').innerHTML = "$" + oj[0].player1.wealth;
+				
+			}
+			if(oj[1].player2 != null){
+				$("#"+oj[1].player2.token).remove();
+				$('#space-'+oj[1].player2.position).prepend('<img id="' + oj[1].player2.token + '" src="images/' + oj[1].player2.token + '.gif" />');
+				document.getElementById('player-2-name').innerHTML = oj[1].player2.name;
+				$('#icon-' + oj[1].player2.token).remove();
+				$('#player-2-token').prepend('<img id="icon-' + oj[1].player2.token + '" src="images/' + oj[1].player2.token + '.gif" />');
+				document.getElementById('player-2-wealth').innerHTML = "$" + oj[1].player2.wealth;
+			}
+			if(oj[2].player3 != null){
+				$("#"+oj[2].player3.token).remove();
+				$('#space-'+oj[2].player3.position).prepend('<img id="' + oj[2].player3.token + '" src="images/' + oj[2].player3.token + '.gif" />');
+				document.getElementById('player-3-name').innerHTML = oj[2].player3.name;
+				$('#icon-' + oj[2].player3.token).remove();
+				$('#player-3-token').prepend('<img id="icon-' + oj[2].player3.token + '" src="images/' + oj[2].player3.token + '.gif" />');
+				document.getElementById('player-3-wealth').innerHTML = "$" + oj[2].player3.wealth;
+			}
+			
+			if(oj[3].player1 != null){
+				$("#"+oj[3].player4.token).remove();
+				$('#space-'+oj[3].player4.position).prepend('<img id="' + oj[3].player4.token + '" src="images/' + oj[3].player4.token + '.gif" />');
+				document.getElementById('player-4-name').innerHTML = oj[3].player4.name;
+				$('#icon-' + oj[3].player4.token).remove();
+				$('#player-4-token').prepend('<img id="icon-' + oj[3].player4.token + '" src="images/' + oj[3].player4.token + '.gif" />');
+				document.getElementById('player-4-wealth').innerHTML = "$" + oj[3].player4.wealth;
+				
+			}
+			/*
+			if(oj[4].player5 != null){
+				$("#"+oj[4].player5.token).remove();
+				$('#space-'+oj[4].player5.position).prepend('<img id="' + oj[4].player5.token + '" src="images/' + oj[4].player5.token + '.gif" />');
+				document.getElementById('player-5-name').innerHTML = oj[4].player5.name;
+				$('#icon-' + oj[4].player5.token).remove();
+				$('#player-5-token').prepend('<img id="icon-' + oj[4].player5.token + '" src="images/' + oj[4].player5.token + '.gif" />');
+				document.getElementById('player-5-wealth').innerHTML = "$" + oj[4].player5.wealth;
+			}
+			if(oj[5].player6 != null){
+				$("#"+oj[5].player6.token).remove();
+				$('#space-'+oj[5].player6.position).prepend('<img id="' + oj[5].player6.token + '" src="images/' + oj[5].player6.token + '.gif" />');
+				document.getElementById('player-6-name').innerHTML = oj[5].player6.name;
+				$('#icon-' + oj[5].player6.token).remove();
+				$('#player-6-token').prepend('<img id="icon-' + oj[5].player6.token + '" src="images/' + oj[5].player6.token + '.gif" />');
+				document.getElementById('player-6-wealth').innerHTML = "$" + oj[5].player6.wealth;
+			}
+			*/
+			
+					
 		}
-		if(!(oj[1].player2 === 'undefined')){
-			$("#"+oj[1].player2.token).remove();
-			$('#space-'+oj[1].player2.position).prepend('<img id="' + oj[1].player2.token + '" src="images/' + oj[1].player2.token + '.gif" />');
-			document.getElementById('player-2-name').innerHTML = oj[1].player2.name;
-			$('#icon-' + oj[1].player2.token).remove();
-			$('#player-2-token').prepend('<img id="icon-' + oj[1].player2.token + '" src="images/' + oj[1].player2.token + '.gif" />');
-			document.getElementById('player-2-wealth').innerHTML = "$" + oj[1].player2.wealth;
-		}
-		if(!(oj[2].player3 === 'undefined')){
-			$("#"+oj[2].player3.token).remove();
-			$('#space-'+oj[2].player3.position).prepend('<img id="' + oj[2].player3.token + '" src="images/' + oj[2].player3.token + '.gif" />');
-			document.getElementById('player-3-name').innerHTML = oj[2].player3.name;
-			$('#icon-' + oj[2].player3.token).remove();
-			$('#player-3-token').prepend('<img id="icon-' + oj[2].player3.token + '" src="images/' + oj[2].player3.token + '.gif" />');
-			document.getElementById('player-3-wealth').innerHTML = "$" + oj[2].player3.wealth;
-		}
+		
+		
 		
 	}
 	
 	function roll()
 	{
 		sendInfo();
-		move();
+		//move();
 	}
 
 </script>
 
 <script type="text/javascript">
-	 //setInterval(sendInfo(),3500);
+	 setInterval(function() { sendInfo(); },3500);
 </script>
 
 </body>
