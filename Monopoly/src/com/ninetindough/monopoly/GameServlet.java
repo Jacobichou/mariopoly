@@ -80,8 +80,6 @@ public class GameServlet extends HttpServlet {
 		} else
 		{
 			
-			
-			
 			response.setContentType("application/json");
 			response.setCharacterEncoding("UTF-8");
 //			if(round!=null){
@@ -97,6 +95,7 @@ public class GameServlet extends HttpServlet {
 				if(g.isGameWon())
 				{
 					responseObj.put("winner", g.getWinner().getName());
+					
 				} else
 				{
 					responseObj.put("winner", "Keep playing suckas!");

@@ -18,7 +18,7 @@
     <div class="row board-spaces">
     	<h1 id="main-title">Playing Mariopoly</h1>
         <div class="small-1 large-1 columns board-nomansland">
-            <button onClick="roll()" type="button">Roll</button>
+            
         </div>
         <div id="space-20" class="small-1 large-1 columns up-space">
         </div>
